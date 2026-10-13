@@ -1,11 +1,6 @@
-// EDIT THIS email address before publishing.
-const CONTACT_EMAIL = 'YOUR_EMAIL@example.com';
-document.querySelectorAll('#year').forEach(el => el.textContent = new Date().getFullYear());
-const form = document.querySelector('#contact-form');
-if (form) form.addEventListener('submit', event => {
-  event.preventDefault();
-  const data = new FormData(form);
-  const subject = encodeURIComponent(`Portfolio inquiry from ${data.get('name')}`);
-  const body = encodeURIComponent(`Name: ${data.get('name')}\nEmail: ${data.get('email')}\n\n${data.get('message')}`);
-  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-});
+// No dependencies. Edit your contact email below if needed.
+document.getElementById('year')?.replaceChildren(document.createTextNode(new Date().getFullYear()));
+const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav-links');
+menu?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});
+document.querySelectorAll('.filter-btn').forEach(button=>button.addEventListener('click',()=>{const selected=button.dataset.filter;document.querySelectorAll('.filter-btn').forEach(b=>{const active=b===button;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});document.querySelectorAll('.project-card').forEach(card=>{card.hidden=selected!=='all'&&card.dataset.category!==selected;});}));
+document.getElementById('contact-form')?.addEventListener('submit',event=>{event.preventDefault();const data=new FormData(event.currentTarget);const subject=`Portfolio inquiry: ${data.get('topic')}`;const body=`Name: ${data.get('name')}\nEmail: ${data.get('email')}\nTopic: ${data.get('topic')}\n\n${data.get('message')}`;window.location.href=`mailto:dgp9937@nyu.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;});

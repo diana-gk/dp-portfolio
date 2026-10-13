@@ -1,28 +1,36 @@
-# Diana's Purple + Black Portfolio
+# Diana Prokopenko — Portfolio Website
 
-A simple, editable, multi-page static HTML portfolio suitable for GitHub Pages. No frameworks or build tools needed.
+Static, GitHub Pages-ready HTML/CSS/JS site with a black-and-purple theme. No installation, build process, or dependencies.
 
-## Pages
-- `index.html` — homepage
-- `projects.html` — project portfolio
-- `services.html` — services
-- `about.html` — bio and social links
-- `contact.html` — email contact form
-- `style.css` — all colors, layout, and responsive styles
-- `script.js` — copyright year and mailto contact form
-- `assets/` — your images
+## Files
+- `index.html` — homepage and featured projects
+- `projects.html` — nine projects with functional category filters
+- `expertise.html` — six technical specialties
+- `services.html` — freelance services
+- `about.html` — bio, education, experience
+- `contact.html` — mailto contact form
+- `style.css` — **all design variables and responsive styles**
+- `script.js` — mobile menu, project filtering, and email draft
+- `assets/*.svg` — **editable illustrative placeholder graphics** (not actual project screenshots)
 
-## Customize
-1. Replace `YOUR_USERNAME`, `YOUR_HANDLE`, and `YOUR_EMAIL@example.com` in the HTML files. Also edit `CONTACT_EMAIL` in `script.js`.
-2. Change colors in the `:root` section of `style.css`.
-3. Put images in `assets/` and uncomment the sample `<img>` tags inside `.thumb` blocks. Replace each filename with your actual image filename.
-4. Edit project descriptions and status labels to reflect what is actually built.
-5. The contact form uses `mailto:` (opens the visitor's email app). It does not send messages automatically; use Formspree or another service later if you want direct submissions.
+## Quick edits
+1. Edit `style.css` `:root` variables to change colors, or edit any HTML directly.
+2. Replace `assets/*.svg` with your own screenshots, then change the corresponding `<img src>` references in the HTML. For example, `assets/durak.svg` -> `assets/durak.png`.
+3. To add a headshot, replace the `.portrait-placeholder` section in `about.html` with `<img src="assets/profile.jpg" alt="Portrait of Diana">` and add styling as desired.
+4. Replace the contact email in `contact.html` **and** `script.js` if your email changes.
+5. Add your Instagram link once the account is ready. Add a resume PDF and link it if you want to publish it.
+6. Edit project descriptions, statuses, metrics, and external links as work evolves. Never imply a concept is a finished client deployment.
 
-## Publish on GitHub Pages
-1. Create a public GitHub repository (for example `portfolio`).
-2. Upload all these files to the repository root, including the `assets` directory.
-3. In repository **Settings → Pages**, select **Deploy from a branch**, then choose `main` and `/ (root)` and save.
-4. Visit the GitHub Pages URL shown in Settings once deployment finishes.
+## Deploy to GitHub Pages
+1. Create a repository or use your existing Pages repository.
+2. Upload the **contents of this folder** into the repository root (not a nested folder).
+3. Go to repository Settings → Pages → Deploy from a branch → main / (root).
+4. If replacing an existing site, back up the existing files first. GitHub Pages only serves one homepage at the root of a given Pages repository.
+5. Visit the URL GitHub shows in Pages settings.
 
-Tip: For a personal root URL (`username.github.io`), name the repository `username.github.io`.
+## Notes
+- Project graphics are SVG illustrations designed specifically for this template. They are not real screenshots of the projects.
+- NYU administrative visuals are illustrative to avoid exposing internal systems.
+- The contact form opens the visitor's email client; it does not submit to a server.
+- The Instagram handle and some live-demo links have intentionally been left unset rather than invented.
+- The portfolio is written from the resume and project details provided; check every statement before publishing.
